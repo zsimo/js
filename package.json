@@ -1,0 +1,29 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "autoreload-server ./ 8080 -b",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "autoreload-server": "./node_modules/.bin/autoreload-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsimo/js.git"
+  },
+  "author": "zsimo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zsimo/js/issues"
+  },
+  "homepage": "https://github.com/zsimo/js#readme",
+  "devDependencies": {
+    "simple-autoreload-server": "^0.2.6"
+  }
+}
