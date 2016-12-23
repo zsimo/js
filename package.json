@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/zsimo/js#readme",
   "devDependencies": {
+    "rollup": "^0.38.0",
     "simple-autoreload-server": "^0.2.6"
   }
 }
