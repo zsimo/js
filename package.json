@@ -9,7 +9,7 @@
   "scripts": {
     "start": "autoreload-server ./ 9090",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rollup" : "rollup -c"
+    "rollup": "rollup -c"
   },
   "bin": {
     "autoreload-server": "./node_modules/.bin/autoreload-server",
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/zsimo/js#readme",
   "devDependencies": {
+    "babel-preset-es2015-rollup": "^3.0.0",
     "rollup": "^0.38.0",
+    "rollup-plugin-babel": "^2.7.1",
     "simple-autoreload-server": "^0.2.6"
   }
 }
