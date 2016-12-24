@@ -4,6 +4,7 @@
 
 
 export default {
-    entry : "rollup/",
-    dest : "rollup/public"
+    entry : "examples/rollup/src/js/index.js",
+    dest : "examples/rollup/public/js/index.js",
+    format : "iife"
 }
