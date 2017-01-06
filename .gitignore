@@ -1,5 +1,8 @@
-/node_modules
-npm-debug.*
+# FOLDERS
+node_modules/
 .idea/
-
 public/
+
+
+# FILES
+npm-debug.*
