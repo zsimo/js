@@ -4,8 +4,9 @@
   "description": "[RxJS Observables Crash Course](https://www.youtube.com/watch?v=ei7FsoXKPl0)",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"live-server --port=8000 --open=public/\" \"webpack -w\""
+    "start": "concurrently \"webpack -w\" \"live-server --port=8000 --open=public/\""
   },
+  "repository" : "https://github.com/zsimo/js",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -16,9 +17,7 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "jquery": "^3.1.1"
-  },
+  "dependencies": {},
   "bin": {
     "webpack": "./node_modules/.bin/webpack"
   }

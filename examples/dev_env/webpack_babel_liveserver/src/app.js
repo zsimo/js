@@ -1,3 +1,3 @@
-var $ = require("jquery");
+const test = "test";
 
-console.log($);
+console.log(test);
