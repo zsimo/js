@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "autoreload-server ./ 9090",
+    "build": "node ./src/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
