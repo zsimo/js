@@ -8,12 +8,10 @@
   },
   "scripts": {
     "start": "autoreload-server ./ 9090",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "rollup": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "autoreload-server": "./node_modules/.bin/autoreload-server",
-    "rollup": "./node_modules/.bin/rollup"
+    "autoreload-server": "./node_modules/.bin/autoreload-server"
   },
   "repository": {
     "type": "git",
@@ -26,9 +24,6 @@
   },
   "homepage": "https://github.com/zsimo/js#readme",
   "devDependencies": {
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "rollup": "^0.38.0",
-    "rollup-plugin-babel": "^2.7.1",
     "simple-autoreload-server": "^0.2.6"
   }
 }

@@ -48,7 +48,7 @@
 
 	var test = "test";
 
-	console.log(test);
+	document.write(test);
 
 /***/ }
 /******/ ]);

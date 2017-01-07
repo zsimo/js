@@ -1,3 +1,4 @@
 const test = "test";
 
-console.log(test);
+
+document.write(test);
