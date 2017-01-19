@@ -1,0 +1,15 @@
+{
+  "name": "side_navigation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8000 --open=public/"
+  },
+  "repository": "https://github.com/zsimo/js",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
