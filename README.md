@@ -10,6 +10,6 @@ npm start
 
 
 ### Working examples:
-* [Side Nav](examples/ui/side_navigation/readme.md) 
-* [Base Redux implementation](examples/redux/Getting-Started-with-Redux/readme.md) 
+* [Side Nav](examples/ui/side_navigation/README.md)
+* [Base Redux implementation](examples/redux/Getting-Started-with-Redux/README.md)
 
