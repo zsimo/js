@@ -6,8 +6,11 @@
 
 * [github](https://github.com/GoogleChrome/ui-element-samples/tree/gh-pages/side-nav)
 
+-----
 
-[Demo] (https://zsimo.github.io/js/examples/ui/side_navigation/public/index.html)
+**[Demo] (https://zsimo.github.io/js/examples/ui/side_navigation/public/index.html)**
+
+-----
 
 
 
