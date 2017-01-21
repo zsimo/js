@@ -1,7 +1,7 @@
 # js
 
 ### Usage
-Inside each examples/package folder with a package.json file, run:
+Inside each examples/folder with a package.json file, run:
 
 ```bash
 npm install
