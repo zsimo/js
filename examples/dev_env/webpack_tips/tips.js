@@ -10,3 +10,12 @@ plugins: [
     }),
     new BowerWebpackPlugin()
 ]
+
+
+
+
+// Passing environment-dependent variables in webpack
+// http://stackoverflow.com/questions/30030031/passing-environment-dependent-variables-in-webpack
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+}),
