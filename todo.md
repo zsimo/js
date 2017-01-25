@@ -3,3 +3,6 @@
 
 * infite scroll [vedi](https://github.com/camwiegert/in-view)
 
+
+* Selenium + Mocha [vedi](https://www.youtube.com/watch?v=M6VcneC2pI0)
+
