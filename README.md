@@ -1,4 +1,4 @@
-# js :microscope::triangular_ruler::wrench::wrench::books::memo::flashlight:
+# js :microscope::triangular_ruler::wrench::books::memo::flashlight:
 
 ### Usage
 Inside each examples/folder with a package.json file, run:
