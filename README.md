@@ -1,4 +1,4 @@
-# js
+# js :microscope::triangular_ruler::wrench:
 
 ### Usage
 Inside each examples/folder with a package.json file, run:
