@@ -1,6 +1,6 @@
 * Creational: handling object creation mechanisms
     * Constructor
-    * [Module](/patterns/creational/Module.js): provide both private and public encapsulation 
+    * [Module](patterns/creational/Module.js): provide both private and public encapsulation 
     * Factory
     * Abstract
     * Prototype
