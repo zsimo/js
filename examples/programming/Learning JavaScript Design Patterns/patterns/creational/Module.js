@@ -1,8 +1,16 @@
+"use strict";
+
 var testModule = (function () {
 
     var counter = 0;
+    function doSomethingPrivate() {
+        //...
+    }
 
     return {
+
+        // Public alias to a private function
+        doSomething: doSomethingPrivate,
 
         incrementCounter: function () {
             return counter++;
