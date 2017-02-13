@@ -1,5 +1,6 @@
 * Creational: handling object creation mechanisms
     * Constructor
+    * [Module](/patterns/creational/Module.js): provide both private and public encapsulation 
     * Factory
     * Abstract
     * Prototype
@@ -9,7 +10,7 @@
     * Decorator
     * Facade
     * Flyweight
-    * Adapter
+    * Adapter: classes can work together despite incompatible interfaces.
     * Proxy
 * Behavioral: communication between disparate
     * Iterator
