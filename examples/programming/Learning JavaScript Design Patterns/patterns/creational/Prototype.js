@@ -26,10 +26,19 @@ var yourCar = Object.create( myCar, {
 });
 //yourCar.name = "new2"; -> gives error
 
+var yourCar2 = Object.create( myCar);
+yourCar2.name = "nuovo test";
+
+// a copy by reference
+//var myCarClone = myCar;
+//myCarClone.name = "mini";
+
 console.log(myCar);
+//console.log(myCarClone);
 console.log(yourCar);
+console.log(yourCar2);
 
 
-function Foo() {}
-var a1 = new Foo();
-console.log(a1);
+//function Foo() {}
+//var a1 = new Foo();
+//console.log(a1);
