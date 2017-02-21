@@ -42,3 +42,9 @@ console.log(yourCar2);
 //function Foo() {}
 //var a1 = new Foo();
 //console.log(a1);
+
+var a = {};
+var b = Object.create(a);
+a.name = "a";
+console.log(a);
+console.log(b);
