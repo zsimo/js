@@ -3,7 +3,7 @@
     * [Module](patterns/creational/Module.js): provide both private and public encapsulation 
     * Factory
     * Abstract
-    * Prototype
+    * [Prototype](patterns/creational/Prototype.js)
     * Singleton
     * Builder
 * Structural: realize relationships between different objects

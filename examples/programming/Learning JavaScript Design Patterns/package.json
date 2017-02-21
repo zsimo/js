@@ -1,0 +1,14 @@
+{
+  "name": "js_design_patterns",
+  "version": "1.0.0",
+  "description": "[Book](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8000 --open=public/"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
