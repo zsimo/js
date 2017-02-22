@@ -1,6 +1,7 @@
 # FOLDERS
 node_modules/
 .idea/
+.vscode/
 
 
 # FILES
