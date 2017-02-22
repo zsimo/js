@@ -1,6 +1,7 @@
 * Creational: handling object creation mechanisms
     * Constructor
     * [Module](patterns/creational/Module.js): provide both private and public encapsulation 
+    * [Revealing Module](patterns/creational/Reveal.js): return an anonymous object with pointers to the private functionality we wished to reveal as public
     * Factory
     * Abstract
     * [Prototype](patterns/creational/Prototype.js)
