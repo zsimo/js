@@ -5,7 +5,7 @@
     * Factory
     * Abstract
     * [Prototype](patterns/creational/Prototype.js)
-    * Singleton
+    * [Singleton](patterns/creational/Singleton.js)
     * Builder
 * Structural: realize relationships between different objects
     * Decorator
