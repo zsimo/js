@@ -13,7 +13,10 @@ var testModule = (function () {
         doSomething: doSomethingPrivate,
 
         incrementCounter: function () {
-            return counter++;
+            counter ++;
+        },
+        getCounter : function () {
+            return counter;
         },
 
         resetCounter: function () {
@@ -31,4 +34,12 @@ testModule.incrementCounter();
 
 // Check the counter value and reset
 // Outputs: counter value prior to reset: 1
-testModule.resetCounter();
+//testModule.resetCounter();
+
+
+// both point to the same object
+var singleton01 = testModule;
+var singleton02 = testModule;
+singleton01.incrementCounter();
+console.log(singleton01.getCounter());
+console.log(singleton02.getCounter());
