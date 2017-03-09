@@ -16,6 +16,6 @@
 * Behavioral: communication between disparate
     * Iterator
     * Mediator
-    * Observer
+    * [Observer](patterns/behavioral/Observer.js)
     * Visitor
      
