@@ -6,6 +6,7 @@
  */
 
 
+"use strict";
 
 document.write('<button id="addNewObserver">Add New Observer checkbox</button>' +
 '<input id="mainCheckbox" type="checkbox"/>' +
@@ -17,21 +18,17 @@ document.close;
 function ObserverList(){
   this.observerList = [];
 }
- 
 ObserverList.prototype.add = function( obj ){
   return this.observerList.push( obj );
 };
- 
 ObserverList.prototype.count = function(){
   return this.observerList.length;
 };
- 
 ObserverList.prototype.get = function( index ){
   if( index > -1 && index < this.observerList.length ){
     return this.observerList[ index ];
   }
 };
- 
 ObserverList.prototype.indexOf = function( obj, startIndex ){
   var i = startIndex;
  
@@ -44,7 +41,6 @@ ObserverList.prototype.indexOf = function( obj, startIndex ){
  
   return -1;
 };
- 
 ObserverList.prototype.removeAt = function( index ){
   this.observerList.splice( index, 1 );
 };
@@ -63,7 +59,7 @@ Subject.prototype.removeObserver = function( observer ){
   this.observers.removeAt( this.observers.indexOf( observer, 0 ) );
 };
  
-Subject.prototype.notify = function( context ){
+Subject.prototype.notify = function( context ) {
   var observerCount = this.observers.count();
   for(var i=0; i < observerCount; i++){
     this.observers.get(i).update( context );
@@ -94,8 +90,7 @@ var controlCheckbox = document.getElementById( "mainCheckbox" ),
   container = document.getElementById( "observersContainer" );
  
  
-// Concrete Subject
- 
+// CONCRETE Subject
 // Extend the controlling checkbox with the Subject class
 extend( controlCheckbox, new Subject() );
  
@@ -106,8 +101,7 @@ controlCheckbox.onclick = function(){
  
 addBtn.onclick = addNewObserver;
  
-// Concrete Observer
- 
+// CONCRETE Observer
 function addNewObserver(){
  
   // Create a new checkbox to be added
@@ -129,3 +123,16 @@ function addNewObserver(){
   // Append the item to the container
   container.appendChild( check );
 }
+
+
+
+// =============================================================================
+// add a custom method to a button element
+// =============================================================================
+var button = document.getElementById("button");
+button.test = function () {
+  console.log("button custom method");
+};
+button.onclick = function () {
+    this.test();
+};
