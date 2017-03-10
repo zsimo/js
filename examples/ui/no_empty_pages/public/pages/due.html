@@ -23,12 +23,15 @@
     <polygon id="polygon_right" fill="#3babb9" stroke="#3babb9"/>
 </svg>
 
+
+<script src="../js/lib.js"></script>
+
 <script>
 
-    var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
-    var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
-
     function draw() {
+        var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+        var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
+
         var svg = document.getElementById("svg");
         svg.setAttribute("width", browserWidth);
         svg.setAttribute("height", browserHeight);
@@ -58,10 +61,10 @@
 
     }
 
-    draw();
-
-
 </script>
+
+
+<script src="../js/app.js"></script>
 
 </body>
 </html>

@@ -22,11 +22,16 @@
     <polygon id="polygon" fill="red" stroke="red"/>
 </svg>
 
+
+<script src="../js/lib.js"></script>
+
 <script>
 
+    function draw() {
 
+        var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+        var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
 
-    function draw(browserWidth, browserHeight) {
         var svg = document.getElementById("svg");
         svg.setAttribute("width", browserWidth);
         svg.setAttribute("height", browserHeight);
@@ -42,38 +47,10 @@
         polygon.setAttribute("points", coordinates);
     }
 
-
-
-
-    (function() {
-        var throttle = function(type, name, obj) {
-            obj = obj || window;
-            var running = false;
-            var func = function() {
-                if (running) { return; }
-                running = true;
-                requestAnimationFrame(function() {
-                    obj.dispatchEvent(new CustomEvent(name));
-                    running = false;
-                });
-            };
-            obj.addEventListener(type, func);
-        };
-
-        /* init - you can init any event */
-        throttle("resize", "optimizedResize");
-    })();
-
-    // handle event
-    window.addEventListener("optimizedResize", function() {
-        var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
-        var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
-
-        draw(browserWidth, browserHeight);
-    });
-
-
 </script>
+
+
+<script src="../js/app.js"></script>
 
 </body>
 </html>
