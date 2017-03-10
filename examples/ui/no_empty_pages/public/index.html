@@ -4,48 +4,15 @@
     <meta charset="UTF-8">
     <title>no_empty</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
-
-
-    <style>
-        body {
-            border : 0;
-            margin: 0;
-        }
-    </style>
-
 </head>
 <body>
 
-<svg id="svg">
-    <polygon id="polygon" fill="red" stroke="red"/>
-</svg>
-
-<script>
-
-    var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
-    var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
-
-    function draw() {
-        var svg = document.getElementById("svg");
-        svg.setAttribute("width", browserWidth);
-        svg.setAttribute("height", browserHeight);
-
-        var polygon = document.getElementById("polygon");
-        /**
-         * @example points="0,0 0,900 900,900"
-         * @type {string}
-         */
-        var coordinates = "0,0 ";
-        coordinates += "0," + browserHeight + " ";
-        coordinates += browserWidth + "," + browserHeight;
-        polygon.setAttribute("points", coordinates);
-    }
-
-    draw();
+<ol>
+    <li><a href="examples/ui/no_empty_pages/public/pages/uno.html">uno</a></li>
+</ol>
 
 
-</script>
+
 
 </body>
 </html>
