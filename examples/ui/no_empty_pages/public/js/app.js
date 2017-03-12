@@ -9,7 +9,11 @@
 
 // handle event
 window.addEventListener("optimizedResize", function() {
-    draw();
+    window.draw();
 });
 
-draw();
+if (window.setUpMainColor && typeof window.setUpMainColor === "function") {
+    window.setUpMainColor();
+}
+
+window.draw();
