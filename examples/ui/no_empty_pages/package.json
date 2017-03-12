@@ -10,10 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.0"
-  },
-  "dependencies": {
     "humps": "^2.0.0",
+    "live-server": "^1.2.0",
     "mustache": "^2.3.0"
-  }
+  },
+  "dependencies": {}
 }
