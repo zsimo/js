@@ -21,3 +21,10 @@
     /* init - you can init any event */
     throttle("resize", "optimizedResize");
 })();
+
+
+function setUpSvgDimension (id, width, height) {
+    var svg = document.getElementById(id);
+    svg.setAttribute("width", width);
+    svg.setAttribute("height", height);
+}

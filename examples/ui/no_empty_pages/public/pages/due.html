@@ -33,9 +33,7 @@
         var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
         var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
 
-        var svg = document.getElementById("svg");
-        svg.setAttribute("width", browserWidth);
-        svg.setAttribute("height", browserHeight);
+        setUpSvgDimension("svg", browserWidth, browserHeight);
 
         var polygonLeft = document.getElementById("polygon_left");
         polygonLeft.setAttribute("width", (browserWidth / 2));
