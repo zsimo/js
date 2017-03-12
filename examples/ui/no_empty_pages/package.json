@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server --port=8000 --open=public/"
+    "start": "live-server --port=8000 --open=public/",
+    "build": "node ./src/build.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "humps": "^2.0.0",
+    "mustache": "^2.3.0"
   }
 }
