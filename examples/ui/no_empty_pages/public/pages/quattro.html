@@ -42,15 +42,19 @@
 
         setUpSvgDimension("svg", browserWidth, browserHeight);
 
+        var lineWidth = browserHeight / 3;
+
         var rectLeft = document.getElementById("rect_left");
         rectLeft.setAttribute("x", 0);
-        rectLeft.setAttribute("y", (browserHeight / 3));
+        rectLeft.setAttribute("y", (browserHeight - lineWidth));
         rectLeft.setAttribute("width", browserWidth);
-        rectLeft.setAttribute("height", (browserHeight / 3));
+        rectLeft.setAttribute("height", lineWidth);
 
         var rectRight = document.getElementById("rect_right");
-        rectRight.setAttribute("x", (browserWidth / 2) - ((browserHeight / 3) / 2));
-        rectRight.setAttribute("width", (browserHeight / 3));
+        // vertiacal middle line
+        // rectRight.setAttribute("x", (browserWidth / 2) - (lineWidth / 2));
+        rectRight.setAttribute("x", browserWidth - lineWidth);
+        rectRight.setAttribute("width", lineWidth);
         rectRight.setAttribute("height", browserHeight);
     }
 
