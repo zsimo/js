@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>no_empty</title>
+    <meta id="chrome_theme" name="theme-color">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+
+
+    <style>
+        body {
+            border : 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+
+<svg id="svg">
+    <rect id="rect_background"/>
+    <rect id="line_left"/>
+    <rect id="line_right"/>
+</svg>
+
+
+<script src="../js/lib.js"></script>
+
+<script>
+
+    function setUpMainColor () {
+        var mainColor = "black";
+        var red = "#8c0505";
+        document.getElementById("rect_background").setAttribute("fill", mainColor);
+        document.getElementById("line_left").setAttribute("fill", red);
+        document.getElementById("line_right").setAttribute("fill", red);
+        document.getElementById("chrome_theme").setAttribute("content", mainColor);
+    }
+
+    function draw() {
+        var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+        var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
+
+        setUpSvgDimension("svg", browserWidth, browserHeight);
+
+        var lineWidth = browserHeight / 3;
+
+        var background = document.getElementById("rect_background");
+        background.setAttribute("x", 0);
+        background.setAttribute("y", 0);
+        background.setAttribute("width", browserWidth);
+        background.setAttribute("height", browserHeight);
+
+        var leftLine = document.getElementById("line_left");
+        leftLine.setAttribute("x", (browserWidth / 5));
+        leftLine.setAttribute("y", 0);
+        leftLine.setAttribute("width", (browserWidth / 8));
+        leftLine.setAttribute("height", browserHeight);
+
+        var rightLine = document.getElementById("line_right");
+        rightLine.setAttribute("x", (browserWidth - (browserWidth / 3)));
+        rightLine.setAttribute("y", 0);
+        rightLine.setAttribute("width", (browserWidth / 8));
+        rightLine.setAttribute("height", browserHeight);
+    }
+
+</script>
+
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>
