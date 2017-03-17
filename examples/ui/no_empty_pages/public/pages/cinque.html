@@ -52,6 +52,9 @@
 
     function draw() {
 
+        browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+        browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
+
         setUpSvgDimension("svg", browserWidth, browserHeight);
 
         var lineWidth = browserHeight / 8;
@@ -120,13 +123,13 @@
     }
 
 
-    document.write('<button style="position: fixed; right: 20px; bottom: 40px; width: 90px; height: 30px;">toggle lines</button>');
+    document.write('<button style="position: fixed; left: '+ ((browserWidth / 2) - (74 / 2)) +'px; bottom: 40px; width: 90px; height: 30px;">toggle lines</button>');
     document.close();
 
     document.getElementsByTagName("button")[0].addEventListener("click", function () {
         drawWitheLines();
     });
-//    drawWitheLines();
+
 
 
 
