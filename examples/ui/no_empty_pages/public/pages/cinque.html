@@ -21,8 +21,12 @@
 
 <svg id="svg">
     <rect id="rect_background"/>
+    <rect id="line_left_1"/>
     <rect id="line_left"/>
+    <rect id="line_left_2"/>
+    <rect id="line_right_1"/>
     <rect id="line_right"/>
+    <rect id="line_right_2"/>
 </svg>
 
 
@@ -30,22 +34,27 @@
 
 <script>
 
+    var counter = 0;
+
     function setUpMainColor () {
         var mainColor = "black";
         var red = "#8c0505";
+
         document.getElementById("rect_background").setAttribute("fill", mainColor);
         document.getElementById("line_left").setAttribute("fill", red);
         document.getElementById("line_right").setAttribute("fill", red);
         document.getElementById("chrome_theme").setAttribute("content", mainColor);
     }
 
+    var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+    var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
+
+
     function draw() {
-        var browserWidth = window.innerWidth || Math.max(document.documentElement.clientWidth, document.body.clientWidth);
-        var browserHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
 
         setUpSvgDimension("svg", browserWidth, browserHeight);
 
-        var lineWidth = browserHeight / 3;
+        var lineWidth = browserHeight / 8;
 
         var background = document.getElementById("rect_background");
         background.setAttribute("x", 0);
@@ -56,15 +65,70 @@
         var leftLine = document.getElementById("line_left");
         leftLine.setAttribute("x", (browserWidth / 5));
         leftLine.setAttribute("y", 0);
-        leftLine.setAttribute("width", (browserWidth / 8));
+        leftLine.setAttribute("width", lineWidth);
         leftLine.setAttribute("height", browserHeight);
 
         var rightLine = document.getElementById("line_right");
         rightLine.setAttribute("x", (browserWidth - (browserWidth / 3)));
         rightLine.setAttribute("y", 0);
-        rightLine.setAttribute("width", (browserWidth / 8));
+        rightLine.setAttribute("width", lineWidth);
         rightLine.setAttribute("height", browserHeight);
     }
+
+    function drawWitheLines() {
+
+        var lineColor;
+
+        if (counter % 2 === 0) {
+            lineColor = "white";
+        } else {
+            lineColor = "black";
+        }
+        counter += 1;
+
+        document.getElementById("line_left_1").setAttribute("fill", lineColor);
+        document.getElementById("line_left_2").setAttribute("fill", lineColor);
+        document.getElementById("line_right_1").setAttribute("fill", lineColor);
+        document.getElementById("line_right_2").setAttribute("fill", lineColor);
+
+        var lineWidth = 6;
+
+        var left1 = document.getElementById("line_left_1");
+        left1.setAttribute("x", (browserWidth / 5) - lineWidth);
+        left1.setAttribute("y", 0);
+        left1.setAttribute("width", lineWidth);
+        left1.setAttribute("height", browserHeight);
+
+        var left2 = document.getElementById("line_left_2");
+        left2.setAttribute("x", (browserWidth / 5) + (browserHeight / 8));
+        left2.setAttribute("y", 0);
+        left2.setAttribute("width", lineWidth);
+        left2.setAttribute("height", browserHeight);
+
+
+        var right1 = document.getElementById("line_right_1");
+        right1.setAttribute("x", (browserWidth - (browserWidth / 3)) - lineWidth);
+        right1.setAttribute("y", 0);
+        right1.setAttribute("width", lineWidth);
+        right1.setAttribute("height", browserHeight);
+
+        var right2 = document.getElementById("line_right_2");
+        right2.setAttribute("x", (browserWidth - (browserWidth / 3)) + (browserHeight / 8));
+        right2.setAttribute("y", 0);
+        right2.setAttribute("width", lineWidth);
+        right2.setAttribute("height", browserHeight);
+    }
+
+
+    document.write('<button style="position: fixed; right: 20px; bottom: 40px; width: 90px; height: 30px;">toggle lines</button>');
+    document.close();
+
+    document.getElementsByTagName("button")[0].addEventListener("click", function () {
+        drawWitheLines();
+    });
+//    drawWitheLines();
+
+
 
 </script>
 
