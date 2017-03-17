@@ -76,6 +76,9 @@
         rightLine.setAttribute("y", 0);
         rightLine.setAttribute("width", lineWidth);
         rightLine.setAttribute("height", browserHeight);
+
+        counter -= 1;
+        drawWitheLines();
     }
 
     function drawWitheLines() {
@@ -123,10 +126,10 @@
     }
 
 
-    document.write('<button style="position: fixed; left: '+ ((browserWidth / 2) - (74 / 2)) +'px; bottom: 40px; width: 90px; height: 30px;">toggle lines</button>');
-    document.close();
+//    document.write('<button style="position: fixed; left: '+ ((browserWidth / 2) - (74 / 2)) +'px; bottom: 40px; width: 90px; height: 30px;">toggle lines</button>');
+//    document.close();
 
-    document.getElementsByTagName("button")[0].addEventListener("click", function () {
+    document.getElementById("svg").addEventListener("click", function () {
         drawWitheLines();
     });
 
