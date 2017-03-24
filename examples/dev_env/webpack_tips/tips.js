@@ -24,3 +24,7 @@ new webpack.DefinePlugin({
 
 // use  del-cli
 // "prebuild" : "del-cli dist -f"
+
+
+
+// --display-error-details
