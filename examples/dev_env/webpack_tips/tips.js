@@ -42,3 +42,8 @@ new webpack.DefinePlugin({
 //chunkFilename: env.cache ? "[chunkhash].js" : "[id].chunk.js" 📲
 //}
 //});
+
+
+// ==================================================
+// Strip Unused CSS
+// https://laracasts.com/series/webpack-for-everyone/episodes/10
