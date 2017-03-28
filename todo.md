@@ -6,3 +6,5 @@
 
 * git [vedi](https://egghead.io/courses/practical-git-for-everyday-professional-use)
 
+
+* tmux [vedi](https://egghead.io/courses/wrangle-your-terminal-with-tmux)
