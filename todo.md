@@ -1,4 +1,5 @@
-* [Refactoring a JavaScript video store](https://www.martinfowler.com/articles/refactoring-video-store-js/)
+
+https://egghead.io/courses/publish-javascript-packages-on-npm?utm_source=drip&utm_medium=email&utm_content=publish-npm-packages* [Refactoring a JavaScript video store](https://www.martinfowler.com/articles/refactoring-video-store-js/)
 
 * infite scroll [vedi](https://github.com/camwiegert/in-view)
 
