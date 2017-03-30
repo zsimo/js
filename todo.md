@@ -11,3 +11,5 @@ https://egghead.io/courses/publish-javascript-packages-on-npm?utm_source=drip&ut
 * tmux [vedi](https://egghead.io/courses/wrangle-your-terminal-with-tmux)
 
 * purifycss-webpack [vedi](https://github.com/webpack-contrib/purifycss-webpack)
+
+https://vimeo.com/102974011?utm_source=javascriptweekly&utm_medium=email
