@@ -1,15 +1,16 @@
+* [Publish JavaScript packages on npm](https://egghead.io/courses/publish-javascript-packages-on-npm?utm_source=drip&utm_medium=email&utm_content=publish-npm-packages)
 
-https://egghead.io/courses/publish-javascript-packages-on-npm?utm_source=drip&utm_medium=email&utm_content=publish-npm-packages* [Refactoring a JavaScript video store](https://www.martinfowler.com/articles/refactoring-video-store-js/)
+* [Refactoring a JavaScript video store](https://www.martinfowler.com/articles/refactoring-video-store-js/)
 
-* infite scroll [vedi](https://github.com/camwiegert/in-view)
+* [infite scroll](https://github.com/camwiegert/in-view)
 
-* Npm scripts [vedi](https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool)
+* [Npm scripts](https://egghead.io/courses/how-to-use-npm-scripts-as-your-build-tool)
 
-* git [vedi](https://egghead.io/courses/practical-git-for-everyday-professional-use)
+* [git](https://egghead.io/courses/practical-git-for-everyday-professional-use)
 
+* [tmux](https://egghead.io/courses/wrangle-your-terminal-with-tmux)
 
-* tmux [vedi](https://egghead.io/courses/wrangle-your-terminal-with-tmux)
+* [purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)
 
-* purifycss-webpack [vedi](https://github.com/webpack-contrib/purifycss-webpack)
+* [JavaScript Coding Tips - Axel Rauschmayer](https://vimeo.com/102974011?utm_source=javascriptweekly&utm_medium=email)
 
-https://vimeo.com/102974011?utm_source=javascriptweekly&utm_medium=email
