@@ -14,6 +14,6 @@
 
 * [JavaScript Coding Tips - Axel Rauschmayer](https://vimeo.com/102974011?utm_source=javascriptweekly&utm_medium=email)
 
+* [Data Structures](https://www.coursera.org/learn/data-structures)
 
 
-https://www.coursera.org/learn/data-structures
