@@ -12,8 +12,6 @@
 
 * [purifycss-webpack](https://github.com/webpack-contrib/purifycss-webpack)
 
-* [JavaScript Coding Tips - Axel Rauschmayer](https://vimeo.com/102974011?utm_source=javascriptweekly&utm_medium=email)
-
 * [Data Structures](https://www.coursera.org/learn/data-structures)
 
 * [viewport/scrollspy](https://github.com/asvd/viewport)
