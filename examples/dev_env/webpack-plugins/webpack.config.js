@@ -3,6 +3,9 @@ const webpack = require("webpack");
 
 const MyPlugin = require("./plugins/MyPlugin.js");
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
     entry: "./src",
     output: {
@@ -10,6 +13,7 @@ module.exports = {
         filename: "[name].chunk.js"
     },
     plugins: [
-        new MyPlugin()
+        new MyPlugin(),
+        new HtmlWebpackPlugin({ title: 'Webpack Plugins' })
     ]
 };
