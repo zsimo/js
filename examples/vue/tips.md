@@ -44,29 +44,25 @@
 
 - v-model directive that makes two-way binding between form input and app state
     ```html
-    <div id="app-5">
-        <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
-    </div>
-    ```
-    ```javascript
-    var app5 = new Vue({
-    el: '#app-5',
-    data: {
-        message: 'Hello Vue.js!'
-    },
-    methods: {
-        reverseMessage: function () {
-        this.message = this.message.split('').reverse().join('')
-        }
-    }
-    })
-
-- v-model directive that makes two-way binding between form input and app state
-    ```html
     <div id="app-6">
     <p>{{ message }}</p>
     <input v-model="message">
+    </div>
+    ```
+    ```javascript
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+    ```
+
+- two-way binding (long form)
+    ```html
+    <div id="app-6">
+    <p>{{ message }}</p>
+    <input :value="message" @input="message = $event.target.value">
     </div>
     ```
     ```javascript
