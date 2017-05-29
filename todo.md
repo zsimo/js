@@ -19,3 +19,5 @@
 * [viewport/scrollspy](https://github.com/asvd/viewport)
 
 * [webpack Progressive Web App](https://github.com/webpack/webpack-pwa)
+
+* [Maintainable CSS using TypeStyle](https://egghead.io/courses/maintainable-css-using-typestyle)
