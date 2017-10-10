@@ -57,6 +57,12 @@
         }
     })
     ```
+    ```js
+        // modifier
+        v-model-trim
+        v-model-number
+        v-model-lazy
+    ```
 
 - two-way binding (long form)
     ```html
