@@ -57,11 +57,21 @@
         }
     })
     ```
+    
+    ```js
+        // directives
+        v-once
+        v-pre
+    ```
+    
     ```js
         // modifier
         v-model.trim
         v-model.number
         v-model.lazy
+    ```
+    ```js
+        $data // for debugging
     ```
 
 - two-way binding (long form)
