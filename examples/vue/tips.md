@@ -144,4 +144,20 @@
         }
     })
     ```
+
+    #### Watcher
+    ```
+    ```javascript
+    data: function () {
+        return {
+            property: ""
+        };
+    },
+    watcher: {
+        property: function () {
+            // can watch every property declared in data obj (every reactive props)
+        }
+    }
+
+    ```
     
