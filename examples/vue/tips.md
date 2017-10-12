@@ -154,7 +154,7 @@
         };
     },
     watcher: {
-        property: function () {
+        property: function (value, oldValue) {
             // can watch every property declared in data obj (every reactive props)
         }
     }
