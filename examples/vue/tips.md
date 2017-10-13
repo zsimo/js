@@ -161,3 +161,15 @@
 
     ```
     
+    #### Props
+    ```javascript
+    props: {
+        propsName: {
+            type: String,
+            required: true,
+            default: "some tesxt"
+        }
+    }
+
+    ```
+    
