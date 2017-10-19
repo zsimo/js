@@ -173,3 +173,14 @@
 
     ```
     
+    #### Custom directive
+    ```html
+    <p v-tack>I will now be tacked onto the page</p>
+    ```
+    ```javascript
+    Vue.directive('tack', {
+     bind(el, binding, vnode) {
+        el.style.position = 'fixed'
+      }
+    });
+    ```
