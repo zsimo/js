@@ -175,12 +175,14 @@
     
     #### Custom directive
     ```html
-    <p v-tack>I will now be tacked onto the page</p>
+    <p v-tack:left="70">I'll now be offset from the left instead of the top</p>
     ```
     ```javascript
     Vue.directive('tack', {
-     bind(el, binding, vnode) {
-        el.style.position = 'fixed'
+      bind(el, binding, vnode) {
+        el.style.position = 'fixed';
+        const s = (binding.arg == 'left' ? 'left' : 'top');
+        el.style[s] = binding.value + 'px';
       }
     });
     ```
