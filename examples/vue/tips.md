@@ -184,3 +184,18 @@
       }
     });
     ```
+    
+    
+    #### lifecycle hooks
+    ```txt
+    beforeCreate
+    created
+    beforeMount
+    mounted
+    beforeUpdate
+    updated
+    activated
+    deactivated
+    beforeDestroy
+    destroyed
+    ```
