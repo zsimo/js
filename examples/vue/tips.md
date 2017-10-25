@@ -201,3 +201,9 @@
     beforeDestroy
     destroyed
     ```
+
+    #### force update
+    ```js
+    this.$forceUpdate();
+    ```
+
