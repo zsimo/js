@@ -1,3 +1,5 @@
+"use strict";
+
 document.write(require("html-loader!./index.html"));
 
 
@@ -83,3 +85,25 @@ function howManyOptions (select) {
     return howMany;
 
 }
+
+
+function walkTheDom (container, element) {
+    var node = container.firstChild;
+
+    while (node) {
+
+        node = node.nextSibling;
+        if (node && node.tagName && node.tagName !== "OPTION" && node.tagName !== "OPTGROUP") {
+            walkTheDom(node, element);
+
+            if (node.tagName === element) {
+                console.log(node.tagName, element);
+            }
+
+        }
+
+    }
+
+}
+
+walkTheDom(document.body, "INPUT");
