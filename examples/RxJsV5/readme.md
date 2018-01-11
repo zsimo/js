@@ -11,4 +11,31 @@
     result.subscribe(x => console.log(x));
     ```
 
+- Sequence of async functions passing through each steps results
+    ```js
+const example = Rx.Observable.of("a")
+   .flatMap(function (i) {
+        return Rx.Observable.create(function (observer) {
+          setTimeout(function () {
+            console.log(i);
+            observer.next(i + "a");
+            observer.complete();
+          }, 500);
+        });
+    })
+   .flatMap(function (i) {
+        return Rx.Observable.create(function (observer) {
+          setTimeout(function () {
+            console.log(i);
+            observer.next(i + "a");
+            observer.complete();
+          }, 500);
+        });
+    });
+//output: 'Complete!'
+const subscribe = example.subscribe({
+  next: (i) => console.log(i),
+  complete: () => console.log('Complete!')
+});
+    ```
 
