@@ -37,4 +37,28 @@
       complete: () => console.log('Complete!')
     });
     ```
+    
+- Dynamically create a sequence of sync operation starting from an array
+    ```js
+    var observablesArray$ = [1, 2, 3].map(function (item) {
+
+        return Rx.Observable.create(function (observer) {
+          
+              setTimeout(function () {
+                 observer.next(item);
+                 observer.complete();   
+              }, 500);
+
+        });
+    });
+
+    /**
+     * use the spread operator (...) to change from an array to a sequence of parameters
+     */
+    Rx.Observable.concat(...observablesArray$)
+    .subscribe({
+      next: (i) => console.log(i),
+      complete: () => console.log('Complete!')
+    });
+    ```
 
