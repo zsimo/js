@@ -32,7 +32,6 @@
               }, 500);
             });
         });
-    //output: 'Complete!'
     const subscribe = example.subscribe({
       next: (i) => console.log(i),
       complete: () => console.log('Complete!')
