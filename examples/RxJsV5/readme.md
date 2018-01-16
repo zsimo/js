@@ -1,6 +1,6 @@
 - Emit the number 7, then complete [(see)](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-defer)
     ```js
-    // without startWith, the next callback should not be fired
+    // without startWith, the next callback would not be fired
     var result = Rx.Observable.empty().startWith(7);
     result.subscribe(x => console.log("NEXT " + x), null, x => console.log("complete"));
     ```
