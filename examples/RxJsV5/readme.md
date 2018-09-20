@@ -6,7 +6,7 @@
     ```
 
 
-- ECreates an Observable from an Array or an iterable object [(see)](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-never)
+- Creates an Observable from an Array or an iterable object [(see)](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-never)
     ```js
     var result = Rx.Observable.from([10, 20, 30]);
     result.subscribe(x => console.log(x));
@@ -39,7 +39,7 @@
     });
     ```
     
-- Dynamically create a sequence of sync operation starting from an array
+- Dynamically create a sequence of async operation starting from an array
     ```js
     var observablesArray$ = [1, 2, 3].map(function (item) {
 
