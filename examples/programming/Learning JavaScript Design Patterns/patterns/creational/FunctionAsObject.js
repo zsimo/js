@@ -1,7 +1,16 @@
 "use strict";
 
-// Function As Object pattern
-// see https://martinfowler.com/articles/refactoring-video-store-js/
+/**
+ * Function As Object pattern:
+ *
+ * This approach uses the Function As Object pattern.
+ * Constructor functions (createCustomer and createRental) return a JavaScript object (hash) of function references.
+ * Each constructor function contains a closure that holds the object's data.
+ * Because the returned object of functions are in the same function context they can access this data.
+ * I see this as exactly the same pattern as using the class syntax, but implemented a different way.
+ *
+ * @see https://martinfowler.com/articles/refactoring-video-store-js/
+ */
 
 function createCustomer(data, movies) {
     return {
