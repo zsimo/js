@@ -1,4 +1,4 @@
-## [OO vs OLOO](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mental-models-compared)
+## [Object Oriented vs Objects Linked to Other Objects](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mental-models-compared)
 
 ### OO
 
