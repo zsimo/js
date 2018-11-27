@@ -8,6 +8,4 @@ var obj = {
     }
 };
 
-module.exports = function () {
-    return obj;
-};
+module.exports = obj;
