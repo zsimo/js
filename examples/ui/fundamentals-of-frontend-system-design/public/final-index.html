@@ -34,12 +34,11 @@
      */
     function createCardComponent(title, body) {
 
-        // const component = template.content.cloneNode(true).firstElementChild;
         /**
          * by cloning a template it returns a document fragment (a lighter dom representation)
          * @type {Node}
          */
-        const component = template.content.cloneNode(true);
+        const component = template.content.cloneNode(true).firstElementChild;
         // component.querySelector("h3").innerText = title;
         // component.querySelector(".card__body__content").innerText = body;
         const [cardTitle, cardBody] = component.querySelectorAll("h3, .card__body__content");

@@ -1,0 +1,7 @@
+.card {
+    position: absolute;
+    width: 100%;
+}
+#container {
+    position: relative;
+}
