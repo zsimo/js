@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend System Design Fundamentals</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+<main id="container"></main>
+</body>
+<script>
+
+    // this is my naive implementation
+
+    const container = document.getElementById('container');
+    const html = `<article class="card">
+    <h3 class="card__title"></h3>
+    <div class="card__body">
+      <div class='card__body__image'></div>
+      <section class='card__body__content'>
+      </section>
+    </div>
+  </article>`;
+
+    /**
+     * @param {string} title
+     * @param {string} body
+     *
+     * @return {HTMLElement
+     */
+    function createCardComponent(title, body) {
+
+        const component = document.createElement("div");
+        component.innerHTML = html;
+        component.querySelector("h3").innerText = title;
+        component.querySelector(".card__body__content").innerText = body;
+        return component;
+
+    }
+
+    const component = createCardComponent(
+        "Frontend System Design: Fundamentals",
+        "This is a random body text"
+    );
+
+    container.appendChild(component);
+</script>
+</html>

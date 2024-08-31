@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend System Design Fundamentals</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+    <template id="template">
+        <article class="card">
+            <h3 class="card__title"></h3>
+            <div class="card__body">
+                <div class='card__body__image'></div>
+                <section class='card__body__content'>
+                </section>
+            </div>
+        </article>
+    </template>
+</head>
+<body>
+<main id="container"></main>
+</body>
+<script>
+
+    // this is my naive implementation
+
+    const container = document.getElementById('container');
+    const template = document.getElementById('template');
+
+    /**
+     * @param {string} title
+     * @param {string} body
+     *
+     * @return {HTMLElement
+     */
+    function createCardComponent(title, body) {
+
+        // const component = template.content.cloneNode(true).firstElementChild;
+        /**
+         * by cloning a template it returns a document fragment (a lighter dom representation)
+         * @type {Node}
+         */
+        const component = template.content.cloneNode(true);
+        // component.querySelector("h3").innerText = title;
+        // component.querySelector(".card__body__content").innerText = body;
+        const [cardTitle, cardBody] = component.querySelectorAll("h3, .card__body__content");
+        cardTitle.innerText = title;
+        cardBody.innerText = body;
+        return component;
+
+    }
+
+    const component = createCardComponent(
+        "Frontend System Design: Fundamentals",
+        "This is a random body text"
+    );
+
+    container.appendChild(component);
+</script>
+</html>
