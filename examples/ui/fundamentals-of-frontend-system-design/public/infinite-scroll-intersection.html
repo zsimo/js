@@ -9,7 +9,7 @@
             <h3 class="card__title"></h3>
             <div class="card__body">
                 <div class='card__body__image'></div>
-                <section class='card__body__content'>
+                <section class='card__body__content' contenteditable="true">
                 </section>
             </div>
         </article>
@@ -24,6 +24,13 @@
 </main>
 <script type="module">
     import {initMockDB} from "./js/mock-db.js";
+    import {createCardElement, getHeading} from "./js/utils.js";
+
+    const SUPPORTED_ELEMENTS = new Set([
+        '/h1',
+        '/h2',
+        '/h3'
+    ]);
 
     const [template, list, observerElement] = document.querySelectorAll("#card_template, #list, #bottom-observer");
 
@@ -32,12 +39,28 @@
         body: "Learning to use Intersection Observer"
     });
 
-    function createCardElement(title, body) {
-        const element = template.content.cloneNode(true).firstElementChild;
-        const [cardTitle, cardBody] = element.querySelectorAll('.card__title, .card__body__content');
-        [cardTitle.textContent, cardBody.textContent] = [title, body];
-        return element;
-    }
+
+    const mutationObserver = new MutationObserver((entries) => {
+        /*
+         * @todo
+         *
+         * 1. Loop through mutations (first arg of callback)
+         * 2. use mutation.type === 'characterData'
+         * 3. When the content matches with any supported tag in SUPPORTED_ELEMENTS
+         *    use getHeading function to convert text to HTMLHeading element
+         * 4. Replace the node with a newly created node
+         * 5. Keep focus on the element
+         */
+        for (const mut of entries) {
+            const target = mut.target;
+            if (mut.type === "characterData" && SUPPORTED_ELEMENTS.has(target.textContent)) {
+                const heading = getHeading(target);
+                target.replaceWith(heading);
+                heading.focus();
+            }
+        }
+    })
+
 
     /**
      * Exercise - Intersection Observer
@@ -66,6 +89,10 @@
             for (const datum of data) {
                 const card = createCardElement(datum.title, datum.body);
                 fragment.appendChild(card);
+                mutationObserver.observe(card, {
+                    subtree: true,
+                    characterData: true
+                })
             }
             list.appendChild(fragment);
             observerElement.innerText = "Bottom Observer";
