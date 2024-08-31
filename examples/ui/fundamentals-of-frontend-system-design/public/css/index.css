@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
 }
-.container {
+#container {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -28,4 +28,15 @@
 }
 .card__body__content {
     padding: 0 1rem;
+}
+
+#bottom-observer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px dashed  rgba(255, 0, 0, 0.6);
 }
