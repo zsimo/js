@@ -56,6 +56,7 @@ function y (element, value = undefined) {
  * @returns {string}
  */
 function translateY(value) {
+    // return `translateY(0px)`;
     return `translateY(${value}px)`;
 }
 
@@ -96,7 +97,7 @@ export class VirtualList {
          */
         return `<div id="container">
                 <div id="top-observer">Top Observer</div>
-                <div id="virtual-table"></div>
+                <table id="virtual-table"></table>
                 <div id="bottom-observer">Bottom Observer</div>
             </div>`.trim();
     }
@@ -144,14 +145,14 @@ export class VirtualList {
         const data = await this.props.getPage(this.end++);
         const container = getContainer();
         if (this.pool.length < this.limit) {
-            const list = getVirtualList();
+            const table = getVirtualList();
             const fragment = new DocumentFragment();
             for (const datum of data) {
-                const card = this.props.getTemplate(datum);
-                fragment.append(card);
-                this.pool.push(card);
+                const tr = this.props.getTemplate(datum);
+                fragment.append(tr);
+                this.pool.push(tr);
             }
-            list.append(fragment);
+            table.append(fragment);
         } else {
             const [toRecycle, unchanged] = [
                 this.pool.slice(0, this.props.pageSize),
@@ -187,6 +188,7 @@ export class VirtualList {
      */
     #updateData(elements, data) {
         for (let i = 0; i < data.length; i++) {
+            console.log(data[i], elements[i])
             this.props.updateTemplate(data[i], elements[i]);
         }
     }
@@ -207,6 +209,9 @@ export class VirtualList {
                     const newY = y(prev) + (MARGIN * 2) + prev.getBoundingClientRect().height;
                     y(current, newY);
                     current.style.transform = translateY(newY);
+                    // const container = getContainer();
+                    // console.log(container.scrollHeight, translateY(newY))
+                    // +++
                 }
             }
         } else if (direction === 'top') {
