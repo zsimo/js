@@ -25,12 +25,13 @@
 
 </body>
 <script type="module">
+    const pageSize = 20;
     const tdSetter = "innerText";
     import {VirtualList} from "./js/virtual-table.js";
     import {initMockDB} from "./js/mock-table-db.js";
     const container = document.body;
     const template = document.getElementById('card_template')
-    const DB = initMockDB({title: 'Frontend System Design', body: 'Learning about virtualization'})
+    const DB = initMockDB({title: 'Frontend System Design', body: 'Learning about virtualization'}, 100, pageSize)
 
     /**
      * @param datum {{ title: string, body: string}}
@@ -38,9 +39,17 @@
      * @returns {HTMLElement}
      */
     function createOrUpdateCard(datum, element) {
-        const row = element ?? document.createElement("tr");
-        // console.log(datum)
         const columns = Object.keys(datum);
+        let row;
+        if (element) {
+            row = element.rows[0];
+        } else {
+            element = document.createElement("tbody");
+            // element.className = "card";
+            // element.style.position = "absolute";
+            row = element.insertRow(-1);
+        }
+
         for (let i = 0; i < columns.length; i++) {
             const column = columns[i];
             const value = datum[column];
@@ -52,13 +61,30 @@
                 row.appendChild(td);
             }
         }
-        return row;
+
+        return element;
+
+        // const row = element ?? document.createElement("tr");
+        //
+        // const columns = Object.keys(datum);
+        // for (let i = 0; i < columns.length; i++) {
+        //     const column = columns[i];
+        //     const value = datum[column];
+        //     if (row.cells[i]) {
+        //         row.cells[i][tdSetter] = value;
+        //     } else {
+        //         const td = document.createElement("td");
+        //         td[tdSetter] = value;
+        //         row.appendChild(td);
+        //     }
+        // }
+        // return row;
     }
 
     const list = new VirtualList(container, {
         getPage: DB.getPage,
         getTemplate: createOrUpdateCard,
-        pageSize: 10,
+        pageSize: pageSize,
         updateTemplate: createOrUpdateCard
     });
     list.render();

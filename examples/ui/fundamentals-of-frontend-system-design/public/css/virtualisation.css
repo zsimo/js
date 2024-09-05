@@ -4,4 +4,22 @@
 }
 #container {
     position: relative;
+    flex-wrap: wrap;
+}
+
+table {
+    position: relative;
+    border-spacing: 0;
+}
+tbody {
+    width: 100%;
+    display: inline-table;
+    position: absolute;
+}
+td {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+td:last-child {
+    border-right: none;
 }

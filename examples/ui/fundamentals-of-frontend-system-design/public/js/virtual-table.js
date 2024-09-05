@@ -4,7 +4,7 @@ import {intersectionObserver} from "./observer.js";
  * Standard Margin between cards
  * @type {number}
  */
-const MARGIN = 16;
+const MARGIN = 0;
 
 /**
  * Returns top and bottom observer elements
@@ -56,7 +56,6 @@ function y (element, value = undefined) {
  * @returns {string}
  */
 function translateY(value) {
-    // return `translateY(0px)`;
     return `translateY(${value}px)`;
 }
 
@@ -143,30 +142,36 @@ export class VirtualList {
 
     async #handleBottomObserver() {
         const data = await this.props.getPage(this.end++);
-        const container = getContainer();
         if (this.pool.length < this.limit) {
             const table = getVirtualList();
             const fragment = new DocumentFragment();
             for (const datum of data) {
-                const tr = this.props.getTemplate(datum);
-                fragment.append(tr);
-                this.pool.push(tr);
+                const tbody = this.props.getTemplate(datum);
+                fragment.append(tbody);
+                this.pool.push(tbody);
             }
             table.append(fragment);
         } else {
+            // the top first half of records to be recycled
+            // the bottom second half of records remain unchanged
+            // the pool is length pageSize * 2
             const [toRecycle, unchanged] = [
                 this.pool.slice(0, this.props.pageSize),
                 this.pool.slice(this.props.pageSize)
             ];
             this.pool = unchanged.concat(toRecycle);
             this.#updateData(toRecycle, data);
-            this.start++;
+            this.start ++;
         }
         this.#updateElementsPosition("down");
+
+        const container = getContainer();
         container.style.height = container.scrollHeight + "px";
+
     }
 
     async #handleTopObserver() {
+
         this.start--;
         this.end--;
         const data = await this.props.getPage(this.start);
@@ -188,7 +193,6 @@ export class VirtualList {
      */
     #updateData(elements, data) {
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i], elements[i])
             this.props.updateTemplate(data[i], elements[i]);
         }
     }
@@ -199,19 +203,16 @@ export class VirtualList {
      * @param direction {"top" | "down" }
      */
     #updateElementsPosition(direction) {
-        const [top, bottom] = getObservers();
         if (direction === 'down') {
+            let newY;
             for (let i = 0; i < this.pool.length; i++) {
-                const [prev, current] = [this.pool.at(i -1), this.pool[i]];
+                const [prev, current] = [this.pool.at(i - 1), this.pool[i]];
                 if (y(prev) == null) {
                     y(current, 0);
                 } else {
-                    const newY = y(prev) + (MARGIN * 2) + prev.getBoundingClientRect().height;
+                    newY = y(prev) + (MARGIN * 2) + prev.getBoundingClientRect().height;
                     y(current, newY);
                     current.style.transform = translateY(newY);
-                    // const container = getContainer();
-                    // console.log(container.scrollHeight, translateY(newY))
-                    // +++
                 }
             }
         } else if (direction === 'top') {
@@ -223,10 +224,12 @@ export class VirtualList {
             }
         }
 
+        const [top, bottom] = getObservers();
         const [first, last] = [this.pool[0], this.pool.at(-1)];
         const topY = y(first);
         const bottomY = y(last) + (MARGIN * 2) + last.getBoundingClientRect().height;
         top.style.transform = translateY(topY);
         bottom.style.transform = translateY(bottomY);
+
     }
 }

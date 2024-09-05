@@ -3,7 +3,7 @@
  * @param count {number}
  * @param page {number}
  */
-export function initMockDB(sample, count = 100, page = 10) {
+export function initMockDB(sample, count = 100, page = 20) {
     let data = Array.from({length: count}, (_, i) => {
         return Object.fromEntries(
             Object
